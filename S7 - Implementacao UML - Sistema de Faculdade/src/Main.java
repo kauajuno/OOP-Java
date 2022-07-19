@@ -30,16 +30,21 @@ public class Main {
 
 
         // Cadastro de cursos
-        while(!Objects.equals(JOptionPane.showInputDialog("Cadastrar novo curso Sim/Não"), "Não")){
+        while(!Objects.equals(JOptionPane.showInputDialog("Cadastrar novo curso? Sim/Não"), "Não")){
             auxCurso = new Curso(
                     JOptionPane.showInputDialog("Nome do curso"),
                     JOptionPane.showInputDialog("Código do curso (INF, IME, etc.)")
             );
-            while(!Objects.equals(JOptionPane.showInputDialog("Associar matéria ao curso? Sim/Não"), "Não")){
-                nomeMateria = JOptionPane.showInputDialog("Insira o nome da matéria");
+            while(!Objects.equals(JOptionPane.showInputDialog("Associar disciplina ao curso? Sim/Não"), "Não")){
+                flag = false;
+                nomeMateria = JOptionPane.showInputDialog("Insira o nome da disciplina");
                 for(Disciplina disciplina : disciplinaArrayList){
-                    if(disciplina.getNome().equals(nomeMateria)) auxCurso.addDisciplina(disciplina);
+                    if(disciplina.getNome().equals(nomeMateria)){
+                        auxCurso.addDisciplina(disciplina);
+                        flag = true;
+                    }
                 }
+                if(!flag) JOptionPane.showMessageDialog(null, "Disciplina não encontrada");
             }
             cursoArrayList.add(auxCurso);
         }
@@ -67,8 +72,8 @@ public class Main {
                         flag = false;
                         break;
                     }
-                    JOptionPane.showMessageDialog(null, "Curso não encontrado!");
                 }
+                if(flag) JOptionPane.showMessageDialog(null, "Curso não encontrado!");
             }
         }
 
@@ -87,6 +92,14 @@ public class Main {
             professorArrayList.add(auxProfessor);
         }
 
+        // Amostragem de dados
+        for (Aluno aluno : alunoArrayList){
+            System.out.println(aluno.mostraDados());
+        }
+
+        for (Professor professor : professorArrayList){
+            System.out.println(professor.mostraDados());
+        }
 
     }
 

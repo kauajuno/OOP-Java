@@ -12,4 +12,13 @@ public class Disciplina {
     public String getNome() {
         return nome;
     }
+
+    @Override
+    public String toString() {
+        return "Disciplina{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", creditos=" + creditos +
+                '}';
+    }
 }

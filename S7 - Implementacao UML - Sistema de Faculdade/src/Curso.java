@@ -18,5 +18,12 @@ public class Curso {
         this.disciplinas.add(disciplina);
     }
 
-
+    @Override
+    public String toString() {
+        return "Curso{" +
+                "nome='" + nome + '\'' +
+                ", codigo='" + codigo + '\'' +
+                ", disciplinas=" + disciplinas +
+                '}';
+    }
 }

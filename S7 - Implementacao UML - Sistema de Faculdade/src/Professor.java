@@ -9,8 +9,19 @@ public class Professor extends Pessoa{
         this.formacao = formacao;
     }
 
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public String getFormacao() {
+        return formacao;
+    }
+
     @Override
     public String mostraDados() {
-        return null;
+        return this.getNome() + "\n" +
+                "Endereço: " + this.getEndereco() + "\n" +
+                "Matrícula: " + this.getMatricula() + "\n" +
+                "Formação: " + this.getFormacao();
     }
 }

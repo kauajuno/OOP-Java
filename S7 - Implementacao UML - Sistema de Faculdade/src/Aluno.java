@@ -18,8 +18,24 @@ public class Aluno extends Pessoa{
         this.curso = curso;
     }
 
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
     @Override
     public String mostraDados() {
-        return null;
+        return this.getNome() + "\n" +
+                "Endereço: " + this.getEndereco() + "\n" +
+                "Matrícula: " + this.getMatricula() + "\n" +
+                "Curso: " + this.getCurso() + "\n" +
+                "Ano: " + this.getAno();
     }
 }
